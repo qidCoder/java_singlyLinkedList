@@ -10,13 +10,17 @@ public class ListTester{
         sll.remove();
         sll.remove();
         sll.printValues();
+
+        System.out.println(sll.find(10));
+        // sll.removeAt(0);
+        // sll.printValues();
+        // sll.removeAt(1);
+        // sll.printValues();
+        sll.removeAt(2);
+        sll.printValues();
     }
 }
 
 
-// Optional Challenges:
-// Implement a find(int) method that will return the first node with the value in the parameter
-
-// Implement a removeAt(int) method that will remove the node after n nodes, where n is the parameter. For example, if n is 0, remove the first node. If n is 1, remove the second node. Similar to Arrays.
 
 

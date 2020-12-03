@@ -44,4 +44,46 @@ public class SinglyLinkedList{
             runner = runner.next;
         }
     }
+
+    // Optional Challenges:
+    // Implement a find(int) method that will return the first node with the value in the parameter
+    public Node find(int val){
+        Node runner = head;
+
+        while(runner != null){
+            if(runner.value == val){
+                return runner;
+            }
+
+            runner = runner.next;
+        }
+
+        return null;
+    }
+
+    // Implement a removeAt(int) method that will remove the node after n nodes, where n is the parameter. For example, if n is 0, remove the first node. If n is 1, remove the second node. Similar to Arrays.
+    public void removeAt(int n){
+        Node runnerL = head;
+        Node runnerR;
+
+        //case if n is 0
+        if(n == 0){
+            runnerR = runnerL.next;
+            runnerL.next = null;
+            head = runnerR;
+        }
+        else{
+
+            for(int i = 0; i < n - 1; i++){
+                runnerL = runnerL.next;
+            }
+
+            runnerR = runnerL.next.next;//set the right runner to be the start of the list to the right of the node to be removed
+
+            runnerL.next = null;//remove the rest of the list 
+
+            runnerL.next = runnerR;//add on the rest of the list after the node removed
+        }
+    }
+
 }
